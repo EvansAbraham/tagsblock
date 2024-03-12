@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import React from "react";
-import {ClerkProvider} from "@clerk/nextjs";
-import {dark} from "@clerk/themes";
 import {ThemeProvider} from "@/providers/theme-provider";
 
 const font = DM_Sans({ subsets: ["latin"] });
@@ -19,7 +17,6 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-      <ClerkProvider appearance={{baseTheme: dark}}>
           <html lang="en">
           <body className={font.className}>
           <ThemeProvider
@@ -31,6 +28,5 @@ export default function RootLayout({
           </ThemeProvider>
           </body>
           </html>
-      </ClerkProvider>
   );
 }
